@@ -22,23 +22,23 @@ Modern ARM64 SoCs possess desktop-class computing power, yet mobile operating sy
 ---
 
 ## 🏗️ Architectural Blueprint
-      ```mermaid
-      graph TD
-          UI[Adaptive Wayland UI Composer] --> Mobile[Mobile Runtime <br> Android Framework & .apk apps]
-          UI --> Desktop[Desktop Container <br> Debian/Ubuntu Core & .deb apps]
+```mermaid
+graph TD
+    UI[Adaptive Wayland UI Composer] --> Mobile[Mobile Runtime <br> Android Framework & .apk apps]
+    UI --> Desktop[Desktop Container <br> Debian/Ubuntu Core & .deb apps]
     
-          Mobile --> Kernel[Unified Kernel Isolation Layer <br> cgroups v2, namespaces, VFS]
-          Desktop --> Kernel
+    Mobile --> Kernel[Unified Kernel Isolation Layer <br> cgroups v2, namespaces, VFS]
+    Desktop --> Kernel
     
-          Kernel --> HW[Host Hardware <br> ARM64 / SoC]
+    Kernel --> HW[Host Hardware <br> ARM64 / SoC]
 
-    %% Estilização para deixar elegante
+    %% Styles
     style UI fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#fff
     style Mobile fill:#111827,stroke:#10b981,stroke-width:1px,color:#fff
     style Desktop fill:#111827,stroke:#8b5cf6,stroke-width:1px,color:#fff
     style Kernel fill:#1f2937,stroke:#f59e0b,stroke-width:2px,color:#fff
     style HW fill:#111827,stroke:#ef4444,stroke-width:2px,color:#fff
-    ```
+```
 ### 1. Execution & Resource Isolation (`cgroups v2` & `namespaces`)
 Instead of heavy Virtual Machines, isolation is enforced at the kernel level using Linux primitives:
 *   **Namespaces (PID, Mount, Net, IPC):** Isolates the desktop user-space from the critical mobile framework, preventing unauthorized inter-process sniffing.
