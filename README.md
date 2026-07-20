@@ -24,8 +24,8 @@ Modern ARM64 SoCs possess desktop-class computing power, yet mobile operating sy
 ## 🏗️ Architectural Blueprint
 ```mermaid
 graph TD
-    UI[Adaptive Wayland UI Composer] --> Mobile[Mobile Runtime <br> Android Framework & .apk apps]
-    UI --> Desktop[Desktop Container <br> Debian/Ubuntu Core & .deb apps]
+    UI[Adaptive Wayland <br> UI Composer] --> Mobile[Mobile Runtime <br> Android Framework & <br> .apk apps]
+    UI --> Desktop[Desktop Container <br> Debian/Ubuntu Core & <br> .deb apps]
     
     Mobile --> Kernel[Unified Kernel Isolation Layer <br> cgroups v2, namespaces, VFS]
     Desktop --> Kernel
